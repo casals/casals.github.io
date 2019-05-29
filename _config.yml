@@ -1,5 +1,5 @@
-title:            \o_=> - - - - - - - - - - D
-#description:      Describe your website here.
+title:            The Cave of Caerbannog
+description:      Beware of the rabbit.
 
 # put your disqus here
 #disqus_shortname:
@@ -43,23 +43,25 @@ owner:
   name:           Arthur Casals
   site:           http://casals.io
   avatar:         images/avatar.png
-  bio:            "Punk totem pole carving"
+  bio:            "Break the world, see how it works. Researcher, coder, information junkie. Music is always on."
   # email:          you@email.com
   # Twitter nick for use in Twitter cards and follow button.
-  twitter: acasals # if no twitter in this config, the twitter follow button will be removed
+  # twitter: acasals # if no twitter in this config, the twitter follow button will be removed
   # GitHub nick for use in follow button in author block.
-  github: casals
+  # github: casals
 
 # Twitter account associated with the site if different from owner/author twitter account.
 # Used in Twitter cards.
-twitter: acasals
+#twitter: acasals
 
 # Social networking links used in author block underneath posts. Update and remove as you like.
 social:
   - title: "github"
     url: "https://github.com/casals"
-  - title: "linkedin"
-    url: "https://br.linkedin.com/in/acasals"
+  - title: "twitter"
+    url: "https://twitter.com/acasals"
+#  - title: "linkedin"
+#    url: "https://br.linkedin.com/in/acasals"
 #  - title: "youtube"
 #    url: "https://www.youtube.com/channel/UCfnSek-9HPWOx5e2pH7VFgg"
 
@@ -89,7 +91,7 @@ permalink:   /:categories/:title/
 paginate: 5
 
 # if true, shows the floatting share buttons
-float_share: true
+float_share: false
 
 # Octopress
 # Default extensions

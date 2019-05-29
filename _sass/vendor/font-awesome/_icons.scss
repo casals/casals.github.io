@@ -150,6 +150,8 @@
 .#{$fa-css-prefix}-external-link:before { content: $fa-var-external-link; }
 .#{$fa-css-prefix}-sign-in:before { content: $fa-var-sign-in; }
 .#{$fa-css-prefix}-trophy:before { content: $fa-var-trophy; }
+.#{$fa-css-prefix}-mandalorian:before { content: fa-content($fa-var-mandalorian); }
+.#{$fa-css-prefix}-git-alt:before { content: fa-content($fa-var-git-alt); }
 .#{$fa-css-prefix}-github-square:before { content: $fa-var-github-square; }
 .#{$fa-css-prefix}-upload:before { content: $fa-var-upload; }
 .#{$fa-css-prefix}-lemon-o:before { content: $fa-var-lemon-o; }
