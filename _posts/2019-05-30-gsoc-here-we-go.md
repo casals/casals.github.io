@@ -65,4 +65,4 @@ Here are a few takeaways from this post:
 
 * There's a link to my accepted GSoC proposal below. My DMs on Twitter are open - feel free to ask me about it. :)
 
-<div markdown="0" align="center"><a href="https://docs.google.com/presentation/d/1-nXx7EaGIab_bki8oS8WJZt8u_fH-g8ur49uWByL9Eo/edit?usp=sharing" class="btn btn-success">Collective Behavior in Terasology</a></div>
+<div markdown="0" align="center"><a href="{{ site.url }}/docs/gsoc19/GSoC 2019 - Arthur Casals.pdf" class="btn btn-success">Collective Behavior in Terasology</a></div>
