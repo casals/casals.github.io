@@ -1,6 +1,6 @@
 ---
 layout: post
-title: GSoC 2019 - first week
+title: GSoC 2019 - First Week
 description: "Google Summer of Code 2019: First week"
 modified: 2019-06-01
 tags: [gsoc19]
