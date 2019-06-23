@@ -27,8 +27,6 @@ I presented this idea during our weekly meeting, and the following discussion on
 
 Since we had reached the limits of a theoretical discussion, I decided to start working on a proof-of-concept (PoC) module so I could actually test each of the above alternatives. I chose the existing WildAnimals module as a primary reference for the PoC. The objective is to use the existing entities in the reference module (deers) and create entity groups without modifying the spawning mechanism as it is right now. That means: when the first deer is created, it is assigned to a group. If a second deer is created, it should be able to recognize the existence of a local group and join it. Crerating a separate model allow us to test the different group structure alternatives without interfering with the existing (working) module. As soon as a group implementation is chosen, I can then proceed to assign behaviors to groups and start the next task (how a group behavior can superpose an individual behavior). 
 
-Management: I'm not planning on solving any issues related to Sectors, but I know there's a macro issue on Multi-world support (#3146) - I'll revisit it as I work to see if anything can be reused. As for other issues: at this point it's all new - but I may raise new issues depending on the questions I compiled (below). In terms of repo impact, /MovingBlocks/Terasology should be the only one impacted (apart from the creation of a new module within /Terasology). (Issue suggestions?) 
-
 ## Weekly report
 
 ### What have you achieved in the last week?
