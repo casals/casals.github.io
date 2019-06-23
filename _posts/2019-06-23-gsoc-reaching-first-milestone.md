@@ -105,9 +105,9 @@ Back to the technical part of the text - after cleaning up the code and consolid
 
 * The group structure was implemented in the form of a component. This allows any `Actor` to act as the hivemind structure, with zero impact on the existing behavior API. All group behavior logic can be defined at the system level without the need for extra entity structures. This also allows the hivemind to be implemented as a virtual entity (without a physical representation in the world), or to be implemented in the form of a group leader (a deer that holds a leadership role, for example). Transferring leadership roles between entities might require a secondary system-level implementation, but this is justified by the minimized overall API impact. 
 
-* In order to allow the instantiation of virtual hiveminds in runtime, we felt the need to implement a new core command called `summonVirtualPrefab`. This implementation impacts the core API.
+* In order to allow the instantiation of virtual hiveminds in runtime, I felt the need to implement a new core command called `summonVirtualPrefab`. This implementation impacts the core API.
 
-* Instead of creating different creatures in the sandbox module, the WildAnimals module was extended with the implementation of RBG Deers. This allows greater segregation of base/experimental code for the next milestones, and the new creatures can be used by any module that currently depends on WildAnimals. The new deer types are shown below:
+* Instead of creating different creatures in the sandbox module, the WildAnimals module was extended with the implementation of RGB Deers. This allows greater segregation of base/experimental code for the next milestones, and the new creatures can be used by any module that currently depends on WildAnimals. The new deer types are shown below:
 
 ![RGB Deers]({{ site.url }}/images/gsoc19/RGB-deers.png)
 {: .image-center}
