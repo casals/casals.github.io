@@ -15,7 +15,7 @@ This week marks the end of the first month of <abbr title="Google Summer of Code
 
 <!-- more -->
 
-## Recap
+## We have no future because our present is too volatile
 
 According to the official GSoC timeline, each month corresponds to a project phase, and by the end of each phase, both students and mentors must submit a mutual evaluation to Google. In our initial planning, we also established milestones for each of the phases (the full task list can be found in the GitHub project board - link below). The goal of our project is to create a mechanism for collective reasoning in Terasology - which means allowing a group of entities to reason as a unit. In order to achieve this goal we established the following milestones:
 
@@ -33,7 +33,7 @@ In this first month, our goal was to create a way of grouping structures in a ma
 
 While these tasks seem simple enough for a milestone, there was a lot to be considered and discussed - and even after that, different alternatives should be tested if we were to create something that could be used in the long run.
 
-## Discussion
+## Hope clouds observation
 
 In order to effectively establish collective reasoning, there were two dimensions to be considered: (i) how group behavior can be _manifested_ within the game, and (ii) how the game is actually being implemented. 
 
@@ -59,7 +59,7 @@ The second dimension involves the ECS architectural pattern used in Terasology (
 * A Sector-derived implementation for Entity grouping; and
 * A specialized Entity register within the code.
 
-## Third week
+## Every man's memory is his private literature
 
 Having defined the base alternatives for implementing a group structure, the next step was creating a sandbox module for testing each of the alternatives. I used the [WildAnimals](https://github.com/Terasology/WildAnimals) module as a base due to its stability/simplicity and created a secondary module to implement the proposed alternatives. I felt the need of creating different As a result, we got _sick deers_:
 
@@ -91,7 +91,7 @@ I had spent almost four weeks going back and forth on the theory behind group be
 
 Given the implementation at hand, it was simple enough to solve - instead of modifying the `Actor` class, I simply had to create a component to hold the group data. I could still use the behavior logic to affect multiple actors in the same manner, just by modifying how the recursion was made. But I was still baffled on how simple it was to stray from one of the original premises. I thought about this, and - for some reason - I was convinced that it was OK at the time (I even said it out loud in one of the Discord discussions). And realizing a mistake so simple (and yet so important) by the end of the fourth week of the project is part of the learning experience that I'd like to share.
 
-## lessons learned and results
+## Never try to outstubborn a cat
 
 We had an apparently simple milestone for this first phase: creating a group structure to allow the implementation of a collective reasoning mechanism. This boils down to choosing the best way to represent groups in the system. The final solution was creating a specific component to register all of the group-related data. And yet - it took me a lot of reading, *a lot* of code that went straight to the bin (sick deers are no more), and a few mistakes and walls along the way (up to the very last moment). I hadn't had this much fun for ages. I've been developing software for a while now, but I never really ventured into game development. I had only read about ECS but never had any hands-on experience. So - if you're reading this post as a fellow GSoC student (perhaps a few years in the future), or if you just started contributing (or considering to contribute) to a project outside of your comfort zone, here are a few pointers illustrated by my personal recent experience:
 
