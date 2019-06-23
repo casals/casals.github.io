@@ -61,7 +61,7 @@ The second dimension involves the ECS architectural pattern used in Terasology (
 
 ## Every man's memory is his private literature
 
-Having defined the base alternatives for implementing a group structure, the next step was creating a sandbox module for testing each of the alternatives. I used the [WildAnimals](https://github.com/Terasology/WildAnimals) module as a base due to its stability/simplicity and created a secondary module to implement the proposed alternatives. I felt the need of creating different As a result, we got _sick deers_:
+Having defined the base alternatives for implementing a group structure, the next step was creating a sandbox module for testing each of the alternatives. I used the [WildAnimals](https://github.com/Terasology/WildAnimals) module as a base due to its stability/simplicity and created a secondary module to implement the proposed alternatives. I felt the need of creating a different type of creature to test group configurations. As a result, we got _sick deers_:
 
 ![Sick Deers]({{ site.url }}/images/gsoc19/sick-deers.jpg)
 {: .image-center}
