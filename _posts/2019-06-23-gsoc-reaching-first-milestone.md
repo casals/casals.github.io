@@ -17,7 +17,7 @@ This week marks the end of the first month of <abbr title="Google Summer of Code
 
 ## We have no future because our present is too volatile
 
-According to the official GSoC timeline, each month corresponds to a project phase. In our initial planning, we also established milestones for each of the phases (the full task list can be found in the GitHub project board - link below). The goal of our project is to create a mechanism for collective reasoning in Terasology - which means allowing a group of entities to reason as a unit. In order to achieve this goal we established the following milestones:
+According to the official GSoC timeline, each month corresponds to a project phase. In our initial planning, we also established milestones for each of the phases (the full task list can be found in the GitHub project board - link below). The goal of our project is to create a mechanism for collective reasoning in Terasology - which means allowing a group of entities to reason as a unit. To achieve this goal we established the following milestones:
 
 * Phase 1 - Create a group structure for entities
 * Phase 2 - Create a collective reasoning mechanism
@@ -35,13 +35,13 @@ While these tasks seem simple enough for a milestone, there was a lot to be cons
 
 ## Hope clouds observation
 
-In order to effectively establish collective reasoning, there were two dimensions to be considered: *(i) how group behavior can be _manifested_ within the game*, and *(ii) how the game is actually being implemented*. 
+To effectively establish collective reasoning, there were two dimensions to be considered: *(i) how group behavior can be manifested within the game* and *(ii) how the game is actually being implemented*. 
 
-The first dimension involves recognizing the different manifestations of group behavior, and which of them are pertinent to our domain. There are different ways to look at it, but in a general manner, we can classify it from the _coordination_ perspective. Group behavior can be either *actively coordinated*, or it can *emerge* from the actions of its members. As an illustration, we can consider the difference between group movement patterns: _flocking_ is something that can emerge from the individual behaviors of each of the group members, driven by the necessity of being close enough of their neighbors, or moving towards the same direction they are moving. Emerging behavior can be _active_ or _passive_, depending on the interaction between the group members. Flocking does not require any form of interaction between the creatures: each group member perceives its neighbors and takes the appropriate action (getting closer or further). This can be seen as passive emergent behavior. An example of active emergent behavior would be a stock market operated by multiple entities: while each entity has its own set of goals and can make their own decisions (coordinated or not), the market behavior emerges without any coordination, as a result of the decisions taken by the entities. 
+The first dimension involves recognizing the different manifestations of group behavior, and which of them are pertinent to our domain. There are different ways to look at it, but in a general manner, we can classify it from the _coordination_ perspective. Group behavior can be either *actively coordinated*, or it can *emerge* from the actions of its members. As an illustration, we can consider the difference between group movement patterns: _flocking_ is something that can emerge from the individual behaviors of each of the group members, driven by the necessity of being close enough of their neighbors or moving towards the same direction they are moving. Emerging behavior can be _active_ or _passive_, depending on the interaction between the group members. Flocking does not require any form of interaction between the creatures: each group member perceives its neighbors and takes the appropriate action (getting closer or further). This can be seen as passive emergent behavior. An example of active emergent behavior would be a stock market operated by multiple entities: while each entity has its own set of goals and can make their own decisions (coordinated or not), the market behavior emerges without any coordination, as a result of the decisions taken by the entities. 
 
 Active coordination can be _centralized_ or _decentralized_. Following a leader is an example of centralized coordination since the decision process is held by a single entity. This entity can be a part of the group (the alpha wolf in a wolf pack) or it can be an external entity, not taking part in the actions resulting from the decision process (a general can order the dislocation of troops without having to leave the HQ). Decentralized decision processes, on the other hand, take into account multiple group members - there is not a central coordinator role. If all members of a group vote on their destination (considering an entirely democratic process), the destination selection can be seen as a decentralized coordination mechanism. 
 
-From the game perspective - and taking this dimension into consideration - ideally we want to be able to implement:
+From the game perspective - and taking this dimension into consideration - ideally, we want to be able to implement:
 
 * Passive emergent group behavior (mainly for movement)
 * Decentralized coordination
@@ -79,12 +79,12 @@ I was able to determine that this would always happen because of how the current
 The most direct way to solve this was to create the ActorGroup as originally intended, and consequently modifying all the behavior processing as it was (action methods, for example, should be overloaded to support both `Actor` and `ActorGroup`). The API impact would be considerable (pretty much everything in the core behavior implementation), so I decided to hold on before going this direction.
 
 
-I was looking for an alternative to minimize the API impact when I realized that I could just modify the `Actor` class by making it self-nesting (Actor with Actor[]). This would simplify the behavior processing since I wouldn't need to refactor it to support a new class type. In addition, it would solve *a lot* of the issues related to cumulative behavior: I could assign identical behaviors to multiple entities seamlessly, and the responsibility of deciding what to do in the event of conflicting behaviors could be delegated to the composite system logic. 
+I was looking for an alternative to minimize the API impact when I realized that I could just modify the `Actor` class by making it self-nesting (Actor with Actor[]). This would simplify the behavior processing since I wouldn't need to refactor it to support a new class type. Besides, it would solve *a lot* of the issues related to cumulative behavior: I could assign identical behaviors to multiple entities seamlessly, and the responsibility of deciding what to do in the event of conflicting behaviors could be delegated to the composite system logic. 
 
 
-With that in mind, I modificed the `Actor` class to support self-nesting. I didn't need to create any methods related to group functionalities since this should be delegated to behavior logic: instead of creating a method for mass-assigning components to group members within the actor, this should be done as recursion in the behavior implementation. Also, any hivemind behavior could be implemented using the existing behavior structure, and this would also allow the same `Actor` to simultaneously belong to multiple groups. 
+With that in mind, I modified the `Actor` class to support self-nesting. I didn't need to create any methods related to group functionalities since this should be delegated to behavior logic: instead of creating a method for mass-assigning components to group members within the actor, this should be done as recursion in the behavior implementation. Also, any hivemind behavior could be implemented using the existing behavior structure, and this would also allow the same `Actor` to simultaneously belong to multiple groups. 
 
-In order to test this idea, I went back to the [Behaviors](https://github.com/Terasology/Behaviors) module, focusing on the `follow` behavior. It is one of the simplest movement behaviors in the game, and it was easy enough to set a behavior recursion to make every entity in the list follow a single leader. This worked as intended, and I had decided to close the matter and proceed with clean-up and documentation. I saved my work, satisfied with a solution that had a minimal API impact, and went for a fresh pot of coffee. And that was when I realized that I had broken one of the original premises.
+To test this idea, I went back to the [Behaviors](https://github.com/Terasology/Behaviors) module, focusing on the `follow` behavior. This is one of the simplest movement behaviors in the game, and it was easy enough to set a behavior recursion to make every entity in the list follow a single leader. This worked as intended, and I had decided to close the matter and proceed with clean-up and documentation. I saved my work, satisfied with a solution that had a minimal API impact, and went for a fresh pot of coffee. And that was when I realized that I had broken one of the original premises.
 
 ## Never try to outstubborn a cat
 
@@ -98,13 +98,13 @@ We had an apparently simple milestone set for this first phase: creating a group
 
 * Don't ever be afraid of deleting code. Ever. You can read a lot about this in books or posts, so it's pretty easy to assume this is now something new - but doing so when you are working outside your comfort zone is not _that_ easy. You must have the ability to say "great - this is what I learned - and with that, the code I wrote in the past days is utterly useless". Enjoy your journey, discard the code, embrace the experience.
 
-* Reach for the community. I can't really stress this enough. During one of the discussions, I shared one of the potential problems I could have in the future, and one of the mentors said: "but this is _super_ easy". And it was, indeed. Sometimes you are so focused on your perspective that you fail to circle around your problem, considering it from a different point of view - one where you can see the solution. Different people think differently; use this for your advantage.
+* Reach for the community. I can't really stress this enough. During one of the discussions, I shared one of the potential problems I could have in the future, and one of the mentors said: "but this is _super_ easy". And it was, indeed. Sometimes you are so focused on your perspective that you fail to circle your problem, considering it from a different point of view - one where you can see the solution. Different people think differently; use this for your advantage.
 
 Back to the technical part of the text - after cleaning up the code and consolidating the tests, here are the results of this milestone:
 
 * The group structure was implemented in the form of a component. This allows any `Actor` to act as the hivemind structure, with zero impact on the existing behavior API. All group behavior logic can be defined at the system level without the need for extra entity structures. This also allows the hivemind to be implemented as a virtual entity (without a physical representation in the world), or to be implemented in the form of a group leader (a deer that holds a leadership role, for example). Transferring leadership roles between entities might require a secondary system-level implementation, but this is justified by the minimized overall API impact. 
 
-* In order to allow the instantiation of virtual hiveminds in runtime, I felt the need to implement a new core command called `summonVirtualPrefab`. This implementation impacts the core API.
+* To allow the instantiation of virtual hiveminds in runtime, I felt the need to implement a new core command called `summonVirtualPrefab`. This implementation impacts the core API.
 
 * Instead of creating different creatures in the sandbox module, the WildAnimals module was extended with the implementation of RGB Deers. This allows greater segregation of base/experimental code for the next milestones, and the new creatures can be used by any module that currently depends on WildAnimals. The new deer types are shown below:
 
@@ -142,7 +142,7 @@ As part of this milestone, I also created the evolving scenario for the entire p
 
 
 ### What are you currently working on?
-* New core command
+* New core commands
 * Base module 
 
 ### What problems are you currently facing?
