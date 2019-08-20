@@ -1,0 +1,36 @@
+Home.md and _Sidebar.md: 
+- Re-ordered navigation structure according to the latest changes.
+
+Quick-Start.md:
+
+- Replaced Entity with entity, since it's referring to the concept and not to the object per se
+- Removed tag: <img-BT-example-structure> (what is it for?)
+- Removed explanation about nodes
+- Replaced the link to Tree Nodes with the link to Behavior Trees (which contains the original content)
+- Removed the link to the GUI page
+- Removed the link to Examples and TutorialBehaviors
+
+High-Level-Overview.md
+
+- Included an overview of the entire behavior system
+- Included description for some of the existing parts
+- Included a high-level description of groups
+- Included an image for BTs
+- Re-organized some of the existing content
+
+Pre-made-Behaviors-and-Nodes.md
+
+- Changed the page title
+- Re-organized the contents to include behaviors from multiple modules
+
+Building-A-Behavior-Tree.md
+- Removed tag <folder structure img?>
+- Replaced broken link: Nodes-in-General
+
+Other:
+
+- Removed the following pages:
+   - Using the GUI editor
+   - Examples and TutorialBehaviors
+- Created a new page for Groups
+- Created a step-by-step tutorial

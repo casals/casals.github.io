@@ -17,7 +17,7 @@ After an entire month of community bonding (which also included playing the game
 
 ## A plan depends as much upon execution as it does upon concept
 
-Before starting the actual coding, there were two things to be done (for the record: [there are always things to be done before you start coding](https://www.khanacademy.org/computing/computer-programming/programming/good-practices/a/planning-a-programming-project)). In this case, [Terasology's GSoC project structure](https://github.com/MovingBlocks/Terasology/wiki/GSOC-project-structure) includes a list of "Pre-GSoC action items" related to project management. From a macro perspective, the list items were:
+Before starting the actual coding, there were a couple of things to be done (for the record: [there are always things to be done before you start coding](https://www.khanacademy.org/computing/computer-programming/programming/good-practices/a/planning-a-programming-project)). In this case, [Terasology's GSoC project structure](https://github.com/MovingBlocks/Terasology/wiki/GSOC-project-structure) includes a list of "Pre-GSoC action items" related to project management. From a macro perspective, the list items were:
 
 * Setting up the communication and reporting mechanisms (Slack channel, Forum thread, blog, etc.);
 * Arranging a weekly meeting with all mentors;
