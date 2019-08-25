@@ -70,7 +70,7 @@ It was a fun, but not a smooth ride. Weighting all the possible scenarios in the
 
 Another interesting aspect of the project was the collateral production of code. Creating a module to showcase the new structures required new behaviors, for example - and since I was exploring the environment I decided to venture into pretty much all I could. So, in the end, we had:
 
-* New creatures - RGB/CYMK/Steel deers and a (paralyzed) wolf. This involved messing with existing prefabs and components from other modules, textures, animations, playing with Blend a bit.
+* New creatures - RGB/CYMK/Steel deer and a (paralyzed) wolf. This involved messing with existing prefabs and components from other modules, textures, animations, playing with Blend a bit.
 * New behaviors - from simple things (such as staying still) to a flocking behavior, so we could demonstrate a scenario involving decentralized coordination in a group.
 * A couple of experiments involving movement and pathfinding mechanisms (result from a joint effort to fix a particularly annoying bug)
 * A new asset structure for groups (which was actually a sub-product from one of the requirements - and understanding how to load pre-defined assets from the disk was also pretty nice)
@@ -104,7 +104,7 @@ As concrete results from the project, we have a list of pull requests [here](htt
    - `org.terasology.logic.behavior.GroupMind`
    - `org.terasology.logic.behavior.GroupTag`
 
-* WildAnimals module, [PR #28](https://github.com/Terasology/WildAnimals/pull/28) and [PR #31](https://github.com/Terasology/WildAnimals/pull/31): new creatures (RGB deers) used in our test scenarios and documents. This prefab package includes:
+* WildAnimals module, [PR #28](https://github.com/Terasology/WildAnimals/pull/28) and [PR #31](https://github.com/Terasology/WildAnimals/pull/31): new creatures (RGB deer) used in our test scenarios and documents. This prefab package includes:
    - New prefabs: `redDeer`, `greenDeer`, and `blueDeer`. These new prefabs were created to be used later in different tutorials and examples:
       - `redDeer`: has the original `deer` as parent and contains only the `skeletalmesh`and the `Behavior` components (assigned behavior: `Behavior:critter`)
       - `greenDeer`: has the same content of the original `deer` prefab, minus the `Behavior` component
