@@ -1,6 +1,6 @@
 ---
 layout: post
-title: GSoC 2019 - Second Milestone
+title: GSoC 2019 - Final Report
 description: "Google Summer of Code 2019: It's a wrap"
 modified: 2019-08-25
 tags: [gsoc19]
