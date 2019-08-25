@@ -73,11 +73,11 @@ However - if I want a scenario where a single entity can not only belong to mult
 
 * Scenario 3: Entities that join a group receive the same behavior tree, and they _must_ act the same way. This can be illustrated by behavior changes that depend on a probability. Suppose that there's a behavior change that is bound to a probability roll of 50%. If we consider the previous scenario, that means that all entities in the group will go through the probability roll, but each with its own - so some of the entities within the group will change their behavior, and some won't. In scenario 3, however, there will be only one probability roll, and all entities in the group will behave as one. 
 
-Without the use of a collective behavior tree processing, unison behavior (scenario 3) was emulated by forcing the state of one entity into others (something like "follow the leader"). That means one entity decides for the rest. This is OK in simpler scenarios, but we start to have a problem when we consider that one entity can belong to multiple groups at the same time. If the "leader" doesn't belong to all groups to which another fellow entity belongs, there will be a problem down the road when conflicting behavior changes must be applied. Having a collective behavior tree, on the other hand, allows the pondering to be done individually by each entity, according to the groups to which they belong. These advantages were already discussed last month - what changed since then was the impact assessment on the existing API.
+Without the use of a collective behavior tree processing, unison behavior (scenario 3) was emulated by forcing the state of one entity into others (something like "follow the leader"). That means one entity decides for the rest. This is OK in simpler scenarios, but we start to have a problem when we consider that one entity can belong to multiple groups at the same time. If the "leader" doesn't belong to all groups to which another fellow entity belongs, there will be a problem down the road when conflicting behavior changes must be applied. Having a collective behavior tree, on the other hand, allows the pondering to be done individually by each entity, according to the groups to which they belong. These advantages were already discussed last month - what changed since then was the impact assessment on the existing API. So I created the `GroupMind` component to be used in scenarios like this.
 
-The last task for this milestone (T3) involved group and entity identity. Separating scenarios also helped here: `GroupTag` and `Hivemind` components were designed to work together, and not exclusively. I created a group asset that can be described in JSON format (similarly to behaviors and prefabs) and compiled in runtime. This allows the developer to meta-specify the groups (using group labels, declaring which behaviors will be used, and especially indicating if a `Hivemind` component will be necessary). At the same time, both `GroupTag` and `Hivemind` components can be directly assigned to the entities prefab files. This provides greater flexibility for dealing with different collective behavior scenarios. 
+The last task for this milestone (T3) involved group and entity identity. Separating scenarios also helped here: `GroupTag` and `GroupMind` components were designed to work together, and not exclusively. I created a group asset that can be described in JSON format (similarly to behaviors and prefabs) and compiled in runtime. This allows the developer to meta-specify the groups (using group labels, declaring which behaviors will be used, and especially indicating if a `GroupMind` component will be necessary). At the same time, both `GroupTag` and `GroupMind` components can be directly assigned to the entities prefab files. This provides greater flexibility for dealing with different collective behavior scenarios. 
 
-After solving these issues I was finally able to showcase everything in the [sample module](https://github.com/casals/WildAnimalsMadness). Due to how the components and supporting system logic were designed, I was also able to create a sample of individual behavior reassignment (which was one of the wishlist tasks). I also included simple movement behaviors (`run` and `stay`) to see how they could be changed using the new system logic. The new CMYK Deers are (partially) used in the examples:
+After solving these issues I was finally able to showcase everything in the [sample module](https://github.com/Terasology/WildAnimalsMadness). Due to how the components and supporting system logic were designed, I was also able to create a sample of individual behavior reassignment (which was one of the wishlist tasks). I also included simple movement behaviors (`run` and `stay`) to see how they could be changed using the new system logic. The new CMYK Deers are (partially) used in the examples:
 
 ![CYMK Deers]({{ site.url }}/images/gsoc19/CYMK-deers.png)
 {: .image-center} 
@@ -104,7 +104,7 @@ Since multiple tasks were handled at the same time (and pretty much solved at th
 #### Week 9:
 
 * Extended the original logic API with collective behavior tree processing
-* Created the `HiveMind`component
+* Created the `GroupMind`component
 * Created identities for groups and group members
 * Finalized group assignment basic mechanisms and commands
 * Updated and committed the sample module showcasing the new functionalities
@@ -125,7 +125,7 @@ Since multiple tasks were handled at the same time (and pretty much solved at th
 
 ### Something else (pictures of new content, code snippets, new wiki content, …)
 * Small wiki additions to the [Gestalt](https://github.com/MovingBlocks/gestalt/wiki/Gestalt%20Asset%20Core%20Quick%20Start) and [ECS concepts](https://github.com/MovingBlocks/Terasology/wiki/Entity-system-concepts) wikis.
-* Sample module [publicly available](https://github.com/casals/WildAnimalsMadness)
+* Sample module [publicly available](https://github.com/Terasology/WildAnimalsMadness)
 * Fun concepts explored: changing the skin of a deer while playing
 
 ## Permanent links

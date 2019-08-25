@@ -34,3 +34,4 @@ Other:
    - Examples and TutorialBehaviors
 - Created a new page for Groups
 - Created a step-by-step tutorial
+- Created a new case study to show how to reuse behaviors within Terasology
